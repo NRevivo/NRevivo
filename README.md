@@ -1,25 +1,27 @@
-# Hi, I'm Noam Revivo
+![Noam Revivo](assets/banner.png)
 
-Computer Science graduate and M.Sc. student in Machine Learning & Data Science at Reichman University.
+# AI engineering & applied machine learning
 
-I build AI-powered applications, backend systems, and data pipelines, with a focus on connecting machine learning capabilities to practical software products.
+I’m a Computer Science graduate pursuing an M.Sc. in Machine Learning & Data Science at Reichman University. I build forecasting systems and train models in PyTorch. I’m especially interested in how to tell whether a model is useful, from checking forecast probabilities against real outcomes to testing whether personalized recommendations beat a simple popularity ranking.
 
-## Featured Projects
+[Portfolio](https://noamrevivo.info) · [LinkedIn](https://linkedin.com/in/noam-revivo)
 
-**ANIZAI — Multi-Agent AI Forecasting Platform**  
-A forecasting platform combining LangGraph-based reasoning, retrieval-augmented generation, streaming data pipelines, and a React/TypeScript interface.
+## ANIZAI · Forecasting with cited evidence
 
-[View ANIZAI](https://github.com/NRevivo/Anizai)
+Given a question about a future event, ANIZAI estimates its probability and shows the sources, competing signals, and gaps behind the estimate. I built a LangGraph workflow that retrieves research, public discussion, and market indicators in parallel. A separate calibration tool compares forecasts with resolved prediction-market outcomes.
 
-**LINKER — Full-Stack URL Shortener**  
-A React and FastAPI application featuring layered architecture, PostgreSQL persistence, concurrency-safe short-code generation, Docker, and automated tests.
+I built the streaming pipeline with Kafka and PyFlink to integrate nine external sources. It processed **36,000+ records in one documented 24-hour run**. I deployed the containerized AI and data services on Google Kubernetes Engine.
 
-[View LINKER](https://github.com/NRevivo/linker-project)
+[Explore ANIZAI](https://github.com/NRevivo/Anizai) · [See the pipeline architecture](https://github.com/NRevivo/Anizai/blob/main/docs/images/architecture-data-pipeline.png)
 
-## Tech Stack
+## Machine learning projects
 
-Python · TypeScript · React · FastAPI · LangGraph · RAG · PostgreSQL · Kafka · PyFlink · Docker · Kubernetes · GCP
+**Image reconstruction and generation.** I trained a differentiable triangle renderer in PyTorch, then froze its weights and optimized the triangles’ positions and colors to reconstruct a target image. I also implemented a GAN for handwritten digit generation and a CycleGAN for translation between unpaired image collections.
 
-## Connect
+**Personalized recommendations · in progress.** I’m building a collaborative filtering model from historical user–item interactions. I’m evaluating matrix factorization against a popularity-based baseline using ranking metrics.
 
-[LinkedIn](https://linkedin.com/in/noam-revivo)
+## LINKER · Backend engineering in Python
+
+I built a URL shortener with FastAPI and PostgreSQL. When concurrent requests generate the same short code, a database uniqueness constraint catches the collision and the service retries. An in-memory repository lets me test that behavior in isolation with Pytest. Docker Compose runs the API and database together.
+
+[Explore LINKER](https://github.com/NRevivo/linker-project) · [Read the URL service](https://github.com/NRevivo/linker-project/blob/main/python/app/service/url_service.py)
